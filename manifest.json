@@ -26,8 +26,8 @@
    },
 //   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDNfmwkcubNM4WFRsykuHp4I/pbmMMvSx4eLHaaE/ZM/jtEjaF+vBuQymrZHaXrLGtS/aqI75l98VTl5rhWWzqgKUsxLMoVflrLvZv0sjlJaPZ1T9B4jH28M7FZY2D1CT6sPntjqIYwJDt29NuwdU+lozVEJKc9R9SQUlf/GQ08GQIDAQAB",
    "manifest_version": 2,
-   "name": "test划词",
-   "options_page": "options.html",//这个是右键标题栏右侧图标后点击“选项"出现的网页
+   "name": "GOCheer划词",
+//   "options_page": "options.html",//这个是右键标题栏右侧图标后点击“选项"出现的网页
    "permissions": [ "\u003Call_urls>", "storage", "alarms", "notifications"],
 //   "permissions": [
 //      "tabs", "http://*/*", "https://*/*"
