@@ -1,6 +1,6 @@
 {
    "background": {
-      "scripts": ["jquery-3.1.0.js","background.js" ]
+      "scripts": ["jquery.min.js","jquery-3.1.0.js","background.js" ,"yanue.pop.js"]
    },
 
 //   browser_action是浏览器标题栏右测的那个图标的行为
@@ -12,8 +12,8 @@
    },
    "content_scripts": [ {
       "all_frames": true,
-      "js": [ "jquery-3.1.0.js","background.js"],
-      "css":["style.css"],
+      "js": [ "jquery.min.js","jquery-3.1.0.js","background.js","yanue.pop.js"],
+      "css":["style.css","popstyle.css"],
       "match_about_blank": true,
       "matches": [ "\u003Call_urls>" ],
 //      "matches":[ "tabs","http://*/*", "https://*/*" ],
