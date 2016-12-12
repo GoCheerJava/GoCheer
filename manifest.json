@@ -12,10 +12,10 @@
    },
    "content_scripts": [ {
       "all_frames": true,
-      "js": [ "jquery.min.js","jquery-3.1.0.js","background.js","yanue.pop.js"],
+      "js": [ "jquery.min.js","jquery-3.1.0.js","select.js","yanue.pop.js"],
       "css":["style.css","popstyle.css"],
       "match_about_blank": true,
-      "matches": [ "\u003Call_urls>" ],
+      "matches": [ "<all_urls>" ],
 //      "matches":[ "tabs","http://*/*", "https://*/*" ],
       "run_at": "document_end"
    } ],
@@ -28,7 +28,7 @@
    "manifest_version": 2,
    "name": "GOCheer划词",
 //   "options_page": "options.html",//这个是右键标题栏右侧图标后点击“选项"出现的网页
-   "permissions": [ "\u003Call_urls>", "storage", "alarms", "notifications"],
+   "permissions": [ "<all_urls>"],
 //   "permissions": [
 //      "tabs", "http://*/*", "https://*/*"
 //   ],
