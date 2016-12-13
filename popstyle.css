@@ -3,6 +3,7 @@
     padding: 0;
 }
 
+/*让成就弹框固定在屏幕右下角（距右、下10px处）*/
 #pop {
     background: #fff;
     width: 260px;

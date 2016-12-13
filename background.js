@@ -1,39 +1,42 @@
-var login_state;
 
-$(function () {
+
+var o;
+var login_state1;
+
+function onRequest(request, sender, callback) {
+    console.log(request);
+    console.log(sender);
+    // callback(
+    //     {
+    //         "state":login_state,
+    //         "achievement":{
+    //             // "image": "default.png",
+    //             "hidden": ach_hidden,
+    //             "name": ach_name,
+    //             "description": ach_discription,
+    //             "id": ach_id
+    //         }
+    //     }
+    //     );
     $.ajax({
-        type:"get",
-        url:"http://gocheer.donggu.me/userInfo",
-        success:function (item) {
+        type: "get",
+        url: "http://gocheer.donggu.me/userInfo",
+        success: function (item) {
             obj = eval(item);
-            if(obj.user==null){
-                $("#not_logged_in").css("display","block");
-                login_state=false;
+            if (obj.user == null) {
+                // $("#not_logged_in").css("display", "block");
+                login_state1 = false;
             }
-            else{
-                $("#login_success").css("display","block");
-                login_state=true;
+            else {
+                // $("#login_success").css("display", "block");
+                login_state1 = true;
             }
+            callback(login_state1);//将登录状态状态发给select.js
         }
     })
-})
+    // callback(login_state);//将登录状态状态发给select.js
 
-$(function () {
-    $("#logout").unbind("click").bind("click",function (e) {
-        $.ajax({
-            type:"post",
-            url:"http://gocheer.donggu.me/logout",
-            data:{ extension: "true"},
-            success:function () {
-                console.log("logout success.");
-            }
-        })
-    })
+}
 
-})
+chrome.extension.onRequest.addListener(onRequest);
 
-chrome.extension.onMessage.addListener(function(objRequest, sender, sendResponse){
-    console.log(objRequest);
-    console.log(sender);
-    sendResponse(login_state);//将登录状态状态发给select.js
-});

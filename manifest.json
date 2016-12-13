@@ -1,37 +1,58 @@
 {
-   "background": {
-      "scripts": ["jquery.min.js","jquery-3.1.0.js","background.js" ,"yanue.pop.js"]
-   },
-
-//   browser_action是浏览器标题栏右测的那个图标的行为
-   "browser_action": {
-      "default_icon": "images/logo.png",
-      //默认图标
-      "default_popup": "login.html"
-      //点击后默认弹出来的页面
-   },
-   "content_scripts": [ {
+  "background": {
+    "scripts": [
+      "jquery.min.js",
+      "jquery-3.1.0.js",
+      "background.js",
+      "yanue.pop.js"
+    ]
+  },
+  //   browser_action是浏览器标题栏右测的那个图标的行为
+  "browser_action": {
+    "default_icon": "images/logo.png",
+    //默认图标
+    "default_popup": "login.html"
+    //点击后默认弹出来的页面
+  },
+  "content_scripts": [
+    {
       "all_frames": true,
-      "js": [ "jquery.min.js","jquery-3.1.0.js","select.js","yanue.pop.js"],
-      "css":["style.css","popstyle.css"],
+      "js": [
+        "jquery.min.js",
+        "jquery-3.1.0.js",
+        "select.js",
+        "yanue.pop.js"
+      ],
+      "css": [
+        "style.css",
+        "popstyle.css"
+      ],
       "match_about_blank": true,
-      "matches": [ "<all_urls>" ],
-//      "matches":[ "tabs","http://*/*", "https://*/*" ],
+      "matches": [
+        "<all_urls>"
+      ],
+      //      "matches":[ "tabs","http://*/*", "https://*/*" ],
       "run_at": "document_end"
-   } ],
-   "description": "目前只是测试在任一网页上划词出有道",
-   "icons": {
-      "128": "images/logo.png",
-      "64": "images/logo.png"
-   },
-//   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDNfmwkcubNM4WFRsykuHp4I/pbmMMvSx4eLHaaE/ZM/jtEjaF+vBuQymrZHaXrLGtS/aqI75l98VTl5rhWWzqgKUsxLMoVflrLvZv0sjlJaPZ1T9B4jH28M7FZY2D1CT6sPntjqIYwJDt29NuwdU+lozVEJKc9R9SQUlf/GQ08GQIDAQAB",
-   "manifest_version": 2,
-   "name": "GOCheer划词",
-//   "options_page": "options.html",//这个是右键标题栏右侧图标后点击“选项"出现的网页
-   "permissions": [ "<all_urls>"],
-//   "permissions": [
-//      "tabs", "http://*/*", "https://*/*"
-//   ],
-   "version": "1.00"
-//   "web_accessible_resources": [ "ab20.png", "ydd-sprite.png", "speech.png" ]
+    }
+  ],
+  "description": "目前只是测试在任一网页上划词出有道",
+  "icons": {
+    "128": "images/logo.png",
+    "64": "images/logo.png"
+  },
+  //   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDNfmwkcubNM4WFRsykuHp4I/pbmMMvSx4eLHaaE/ZM/jtEjaF+vBuQymrZHaXrLGtS/aqI75l98VTl5rhWWzqgKUsxLMoVflrLvZv0sjlJaPZ1T9B4jH28M7FZY2D1CT6sPntjqIYwJDt29NuwdU+lozVEJKc9R9SQUlf/GQ08GQIDAQAB",
+  "manifest_version": 2,
+  "name": "GOCheer划词",
+  //   "options_page": "options.html",//这个是右键标题栏右侧图标后点击“选项"出现的网页
+  "permissions": [
+    "<all_urls>",
+    "background",
+    "notifications",
+    "tabs"
+  ],
+  //   "permissions": [
+  //      "tabs", "http://*/*", "https://*/*"
+  //   ],
+  "version": "1.00"
+  //   "web_accessible_resources": [ "ab20.png", "ydd-sprite.png", "speech.png" ]
 }

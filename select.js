@@ -4,7 +4,12 @@
 /**
  * Created by ZHY on 2016/12/2.
  */
+var log_state;
 
+function ask_for_loginstate(data) {
+    log_state = data;
+    // alert(log_state);
+}
 
 $(function () {
     var word;
@@ -12,10 +17,8 @@ $(function () {
     var has_result = false;
     var has_word = false;
     $("body").unbind("click").bind("click", function getword(a) {
-        chrome.extension.sendMessage({'txt1': 'test_for_send'}, function (d) {
-            console.log(d);
-        });
 
+        chrome.extension.sendRequest({"funct": "ask_for_loginstate"}, ask_for_loginstate);
 
         if (has_result == false) {
             console.log("1");
@@ -92,11 +95,16 @@ $(function () {
                             temp.innerHTML = result[i];
                             $(".icIBahyI-group_pos").append(temp);
                         }
-                        $("#icIBahyI-main_box").css("display", "block");
-                        $("#icIBahyI-main_box").css("position", "absolute").css("left", (getMousePos(a).x + 10) + "px").css("top", (getMousePos(a).y + 10) + "px").css("z-index", "999");
-                        has_result = true;
 
-                        var pop = new Pop("Lonely", "http://www.baidu.com", "Learning on Frieday night.", true);
+                        if (log_state == true) {
+                            $("#icIBahyI-main_box").css("display", "block");
+                            $("#icIBahyI-main_box").css("position", "absolute").css("left", (getMousePos(a).x + 10) + "px").css("top", (getMousePos(a).y + 10) + "px").css("z-index", "999");
+                            has_result = true;
+                            var pop1 = new Pop("Lonely", "http://www.baidu.com", "Learning on Frieday night.", true);
+                        }
+
+                        // var pop1 = new Pop("Lonely", "http://www.baidu.com", "Learning on Frieday night.", true);
+                        // var pop2 = new Pop("sssss", "http://www.baidu.com", "ttttttttttttt.", true);
 
                     }
                 });
@@ -125,7 +133,6 @@ $(function () {
 
 })
 
-// document.body.addEventListener("click", getWord, false);
 
 //获得划词时鼠标的位置
 function getMousePos(event) {
@@ -136,7 +143,6 @@ function getMousePos(event) {
     var y = e.pageY || e.clientY + scrollY;
     return {'x': x, 'y': y};
 }
-
 
 // $(function () {
 //     if (has_result==false)
@@ -209,3 +215,4 @@ function getMousePos(event) {
 //     }
 // })
 
+// document.body.addEventListener("click", getWord, false);
