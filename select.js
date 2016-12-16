@@ -11,6 +11,7 @@ function ask_for_loginstate(data) {
     // alert(log_state);
 }
 
+
 $(function () {
     var word;
     var obj;
@@ -18,7 +19,7 @@ $(function () {
     var has_word = false;
     $("body").unbind("click").bind("click", function getword(a) {
 
-        chrome.extension.sendRequest({"funct": "ask_for_loginstate"}, ask_for_loginstate);
+        chrome.extension.sendRequest({funct: "ask_for_loginstate"}, ask_for_loginstate);
 
         if (has_result == false) {
             console.log("1");
@@ -58,7 +59,7 @@ $(function () {
                     '    <div id="popContent">' +
                     '        <dl>' +
 // '            <dt id="popTitle"><a href="http://yanue.info/" target="_blank">这里是参数</a></dt>' +'
-                    '            <img src="http://gocheer.donggu.me/images/logo.png">' +
+//                     '            <img src="http://gocheer.donggu.me/images/logo.png">' +
                     '            <dt id="popTitle">恭喜获得新成就：</dt>' +
                     '            <dd id="popAchName" style="font-weight: bold">这里是成就名称</dd>' +
                     '            <dd id="popIntro">这里是成就描述</dd>' +
@@ -79,37 +80,70 @@ $(function () {
 
             // 划词时鼠标定位
 
-            if (word = window.getSelection ? window.getSelection() : document.selection.createRange().text) {
-                has_word = true;
-                $.ajax({
-                    type: "get",
-                    url: "//fanyi.youdao.com/openapi.do?keyfrom=GoCheer&key=1831162149&type=data&doctype=json&version=1.1&q=" + word,
-                    success: function (item) {
-                        // console.log(item);
-                        obj = eval(item);
-                        var result = new Array();
-                        $("#ICIBA_HUAYI_input").text(word);
-                        for (var i = 0; i < obj.basic.explains.length; i++) {
-                            result[i] = obj.basic.explains[i];
-                            var temp = document.createElement("p");
-                            temp.innerHTML = result[i];
-                            $(".icIBahyI-group_pos").append(temp);
-                        }
 
-                        if (log_state == true) {
+            if (log_state == true) {
+
+                if (word = window.getSelection ? window.getSelection() : document.selection.createRange().text) {
+                    has_word = true;
+                    $.ajax({
+                        type: "get",
+                        url: "//fanyi.youdao.com/openapi.do?keyfrom=GoCheer&key=1831162149&type=data&doctype=json&version=1.1&q=" + word,
+                        success: function (item) {
+                            // console.log(item);
+                            obj = eval(item);
+                            var result = new Array();
+                            $("#ICIBA_HUAYI_input").text(obj.query);
+//                         errorCode：
+// 　                       0 - 正常
+//                         20 - 要翻译的文本过长
+//                         30 - 无法进行有效的翻译
+//                         40 - 不支持的语言类型
+//                         50 - 无效的key
+//                         60 - 无词典结果，仅在获取词典结果生效
+                            if (obj.basic != null && obj.errorCode == 0) { //有道词典-基本词典
+                                for (var i = 0; i < obj.basic.explains.length; i++) {
+                                    result[i] = obj.basic.explains[i];
+                                    var temp = document.createElement("p");
+                                    temp.innerHTML = result[i];
+                                    $(".icIBahyI-group_pos").append(temp);
+                                }
+                            }
+                            else if (obj.translation != null && obj.errorCode == 0) { //有道翻译
+                                for (var i = 0; i < obj.translation.length; i++) {
+                                    result[i] = obj.translation[i];
+                                    var temp = document.createElement("p");
+                                    temp.innerHTML = result[i];
+                                    $(".icIBahyI-group_pos").append(temp);
+                                }
+                            }
+                            else if (obj.errorCode == 20) {
+                                var temp = document.createElement("p");
+                                temp.innerHTML = "抱歉，您要翻译的文本过长。";
+                                $(".icIBahyI-group_pos").append(temp);
+                            }
+                            else if (obj.errorCode == 30 || obj.errorCode == 40 || obj.errorCode == 50 || obj.errorCode == 60) {
+                                var temp = document.createElement("p");
+                                temp.innerHTML = "抱歉，我们无法进行有效的翻译。";
+                                $(".icIBahyI-group_pos").append(temp);
+                            }
+
+
                             $("#icIBahyI-main_box").css("display", "block");
                             $("#icIBahyI-main_box").css("position", "absolute").css("left", (getMousePos(a).x + 10) + "px").css("top", (getMousePos(a).y + 10) + "px").css("z-index", "999");
                             has_result = true;
-                            var pop1 = new Pop("Lonely", "http://www.baidu.com", "Learning on Frieday night.", true);
+
+                            var pop1 = new Pop("Lonely", "http://www.baidu.com", "Learning on Frieday night.", true,2);
+                            // var pop2 = new Pop("sssss", "http://www.baidu.com", "ttttttttttttt.", true,3);
+
                         }
+                    });
 
-                        // var pop1 = new Pop("Lonely", "http://www.baidu.com", "Learning on Frieday night.", true);
-                        // var pop2 = new Pop("sssss", "http://www.baidu.com", "ttttttttttttt.", true);
+                }
 
-                    }
-                });
 
+                // var pop1 = new Pop("Lonely", "http://www.baidu.com", "Learning on Frieday night.", true);
             }
+
             a.stopPropagation();
         }
         else if (has_word == true && has_result == true) {

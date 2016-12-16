@@ -1,11 +1,12 @@
 ﻿
 //pop右下角弹窗函数
 
-function Pop(name, url, intro, state) {
+function Pop(name, url, intro, state,no) {
     this.name = name;
     this.url = url;
     this.intro = intro;
     this.state = state;
+    this.no=no;
     this.apearTime = 1000;
     this.hideTime = 1000;
     this.delay = 3000;
