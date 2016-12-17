@@ -4,7 +4,7 @@
 }
 
 /*让成就弹框固定在屏幕右下角（距右、下10px处）*/
-#pop {
+.asd {
     background: #fff;
     width: 260px;
     border: 1px solid #e0e0e0;
@@ -12,6 +12,7 @@
     position: fixed;
     right: 10px;
     bottom: 10px;
+    z-index: 9999;
 }
 
 #popHead {

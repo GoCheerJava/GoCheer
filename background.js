@@ -1,8 +1,8 @@
 
 
-var o;
+var obj;
 var login_state1;
-
+var obj2;
 function onRequest(request, sender, callback) {
     console.log(request);
     console.log(sender);
@@ -29,18 +29,10 @@ function onRequest(request, sender, callback) {
     if (request.funct=="ask_for_achievement"){
         $.ajax({
             type: "get",
-            url: "http://gocheer.donggu.me/newRecord?word="+"",
+            url: "http://gocheer.donggu.me/newRecord?word="+request.word,
             success: function (item) {
-                obj = eval(item);
-                if (obj.user == null) {
-                    // $("#not_logged_in").css("display", "block");
-                    login_state1 = false;
-                }
-                else {
-                    // $("#login_success").css("display", "block");
-                    login_state1 = true;
-                }
-                callback(login_state1);//将登录状态状态发给select.js
+                obj2 = eval(item);
+                callback(obj2);//将得到的achivement信息发给select.js
             }
         })
     }

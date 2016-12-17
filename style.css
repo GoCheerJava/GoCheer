@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
-#icIBahyI-main_box {
+#GoCheer-main_box {
     width: 350px;
     background: #fff;
     z-index: 99998;
@@ -13,12 +13,12 @@
     box-shadow: 0 0 6px 2px rgba(0, 0, 0, .2);
 }
 
-#icIBahyI-main_box .icIBahyI-loading {
+#GoCheer-main_box .GoCheer-loading {
     background: #fff url(http://open.iciba.com/huaci_new/loader.gif) no-repeat center center;
     height: 180px;
 }
 
-#icIBahyI-main_box .icIBahyI-main_title {
+#GoCheer-main_box .GoCheer-main_title {
     height: 26px;
     line-height: 26px;
     text-align: center;
@@ -27,7 +27,7 @@
     z-index: 99999;
 }
 
-#icIBahyI-main_box .icIBahyI-logo {
+#GoCheer-main_box .GoCheer-logo {
     display: inline-block;
     width: 33px;
     height: 12px;
@@ -36,7 +36,7 @@
     vertical-align: middle;
 }
 
-#icIBahyI-main_box .icIBahyI-main_title a.icIBahyI-gb {
+#GoCheer-main_box .GoCheer-main_title a.GoCheer-gb {
     position: absolute;
     right: 7px;
     top: 7px;
@@ -47,15 +47,15 @@
     background-position: 0 -105px;
 }
 
-#icIBahyI-main_box .icIBahyI-main_title a.icIBahyI-gb:hover {
+#GoCheer-main_box .GoCheer-main_title a.GoCheer-gb:hover {
     background-position: -41px -105px;
 }
 
-#icIBahyI-main_box .icIBahyI-main_title a.icIBahyI-gb:active {
+#GoCheer-main_box .GoCheer-main_title a.GoCheer-gb:active {
     background-position: -41px -105px;
 }
 
-#icIBahyI-main_box .icIBahyI-search {
+#GoCheer-main_box .GoCheer-search {
     height: 30px;
     line-height: 30px;
     color: #44a8f3;
@@ -66,13 +66,13 @@
     white-space: nowrap;
 }
 
-#icIBahyI-main_box .icIBahyI-search a {
+#GoCheer-main_box .GoCheer-search a {
     border: none;
     background: none;
     margin-top: 9px;
 }
 
-#icIBahyI-main_box .icIBahyI-prev, #icIBahyI-main_box .icIBahyI-next {
+#GoCheer-main_box .GoCheer-prev, #GoCheer-main_box .GoCheer-next {
     display: block;
     float: left;
     width: 21px;
@@ -81,7 +81,7 @@
     margin-left: 1px \9
 }
 
-#icIBahyI-main_box .icIBahyI-search input {
+#GoCheer-main_box .GoCheer-search input {
     height: 21px;
     line-height: 21px;
     padding: 0 5px;
@@ -92,7 +92,7 @@
     float: left;
 }
 
-#icIBahyI-main_box a.icIBahyI-sear {
+#GoCheer-main_box a.GoCheer-sear {
     float: left;
     display: block;
     width: 59px;
@@ -106,7 +106,7 @@
     outline: none;
 }
 
-#icIBahyI-main_box .icIBahyI-CB {
+#GoCheer-main_box .GoCheer-CB {
     position: absolute;
     width: 100%;
     left: 0;
@@ -114,7 +114,7 @@
     background: #f8f8f8;
 }
 
-#icIBahyI-main_box .icIBahyI-down {
+#GoCheer-main_box .GoCheer-down {
     background: #fff;
     border-left: 1px solid #c3c3c3;
     border-right: 1px solid #c3c3c3;
@@ -122,7 +122,7 @@
     padding: 0 10px;
 }
 
-#icIBahyI-main_box .icIBahyI-down a {
+#GoCheer-main_box .GoCheer-down a {
     font-size: 12px;
     color: #236FD4;
     text-decoration: none;
@@ -131,28 +131,28 @@
     padding: 5px 2px;
 }
 
-#icIBahyI-main_box .icIBahyI-down a:hover {
+#GoCheer-main_box .GoCheer-down a:hover {
     text-decoration: underline;
 }
 
-.icIbahyI-des {
+.GoCheer-des {
     height: 30px;
     overflow: hidden;
     padding-right: 9px;
 }
 
-.icIbahyI-des a {
+.GoCheer-des a {
     float: right;
     margin-top: 5px;
     color: #1596f5;
     text-decoration: none;
 }
 
-.icIbahyI-des a:hover {
+.GoCheer-des a:hover {
     color: #57b6fb;
 }
 
-#icIBahyI-main_cont {
+#GoCheer-main_cont {
     padding: 0 20px;
     font-family: "microsoft yahei", Arial, Helvetica, sans-serif;
     font-size: 14px;
@@ -161,116 +161,116 @@
     min-height: 150px;
 }
 
-#icIBahyI-main_cont div, #icIBahyI-main_cont ul, #icIBahyI-main_cont li, #icIBahyI-main_cont p, #icIBahyI-main_cont form, #icIBahyI-main_cont input, #icIBahyI-main_cont label {
+#GoCheer-main_cont div, #GoCheer-main_cont ul, #GoCheer-main_cont li, #GoCheer-main_cont p, #GoCheer-main_cont form, #GoCheer-main_cont input, #GoCheer-main_cont label {
     margin: 0;
     padding: 0;
     font-size: 14px;
 }
 
-#icIBahyI-main_cont input, #icIBahyI-main_cont button, #icIBahyI-main_cont textarea {
+#GoCheer-main_cont input, #GoCheer-main_cont button, #GoCheer-main_cont textarea {
     font-family: Arial, Helvetica, sans-serif;
     font-size: inherit;
     font-style: inherit;
     font-weight: inherit;
 }
 
-#icIBahyI-main_cont {
+#GoCheer-main_cont {
     background: #fff;
     _width: 278px;
     _overflow: hidden;
 }
 
-#icIBahyI-main_cont ul, #icIBahyI-main_cont li {
+#GoCheer-main_cont ul, #GoCheer-main_cont li {
     list-style: none;
 }
 
-#icIBahyI-main_cont a {
+#GoCheer-main_cont a {
     color: #666;
     text-decoration: none;
 }
 
-#icIBahyI-main_cont a:hover {
+#GoCheer-main_cont a:hover {
     color: #4372b6;
     text-decoration: underline;
 }
 
-#icIBahyI-main_cont a:focus {
+#GoCheer-main_cont a:focus {
     outline: none;
 }
 
-#icIBahyI-main_cont img {
+#GoCheer-main_cont img {
     border: 0;
 }
 
-#icIBahyI-main_cont strong {
+#GoCheer-main_cont strong {
     font-weight: 100;
     font-family: "arial", "Segoe UI", Verdana, Lucida Sans Regular, Lucida Sans Unicode, Arial, sans-serif;
 }
 
-#icIBahyI-main_cont .icIBahyI-bg_main {
+#GoCheer-main_cont .GoCheer-bg_main {
     background: #fff;
 }
 
-#icIBahyI-main_cont .icIBahyI-usually, #icIBahyI-main_cont .icIBahyI-prons, #icIBahyI-main_cont .icIBahyI-tab_list, #icIBahyI-main_cont .icIBahyI-group_inf {
+#GoCheer-main_cont .GoCheer-usually, #GoCheer-main_cont .GoCheer-prons, #GoCheer-main_cont .GoCheer-tab_list, #GoCheer-main_cont .GoCheer-group_inf {
     font-size: 14px;
 }
 
-#icIBahyI-main_cont .icIBahyI-fl, #icIBahyI-main_cont .icIBahyI-nav_list li, #icIBahyI-main_cont .icIBahyI-left_bg, #icIBahyI-main_cont .icIBahyI-usually label, #icIBahyI-main_cont .icIBahyI-usually span, #icIBahyI-main_cont .icIBahyI-tab_list li, #icIBahyI-main_cont .icIBahyI-group_inf li, #icIBahyI-main_cont .icIBahyI-eg, #icIBahyI-main_cont .icIBahyI-us {
+#GoCheer-main_cont .GoCheer-fl, #GoCheer-main_cont .GoCheer-nav_list li, #GoCheer-main_cont .GoCheer-left_bg, #GoCheer-main_cont .GoCheer-usually label, #GoCheer-main_cont .GoCheer-usually span, #GoCheer-main_cont .GoCheer-tab_list li, #GoCheer-main_cont .GoCheer-group_inf li, #GoCheer-main_cont .GoCheer-eg, #GoCheer-main_cont .GoCheer-us {
     float: left;
 }
 
-#icIBahyI-main_cont .icIBahyI-register, #icIBahyI-main_cont .icIBahyI-right_bg, #icIBahyI-main_cont .icIBahyI-up, #icIBahyI-main_cont .icIBahyI-down {
+#GoCheer-main_cont .GoCheer-register, #GoCheer-main_cont .GoCheer-right_bg, #GoCheer-main_cont .GoCheer-up, #GoCheer-main_cont .GoCheer-down {
     float: right
 }
 
-#icIBahyI-main_cont .icIBahyI-register {
+#GoCheer-main_cont .GoCheer-register {
     padding-left: 25px;
 }
 
-#icIBahyI-main_cont a.icIBahyI-text_black, #icIBahyI-main_cont .icIBahyI-nav_list strong {
+#GoCheer-main_cont a.GoCheer-text_black, #GoCheer-main_cont .GoCheer-nav_list strong {
     color: #333;
 }
 
-#icIBahyI-main_cont a {
+#GoCheer-main_cont a {
     text-decoration: none;
     color: #236fd4;
     font-size: 14px;
 }
 
-#icIBahyI-main_cont a:hover {
+#GoCheer-main_cont a:hover {
     color: #236fd4;
 }
 
-#icIBahyI-main_cont .icIBahyI-handwrite, #icIBahyI-main_cont .icIBahyI-handwrite_over, #icIBahyI-main_cont .icIBahyI-drop_down {
+#GoCheer-main_cont .GoCheer-handwrite, #GoCheer-main_cont .GoCheer-handwrite_over, #GoCheer-main_cont .GoCheer-drop_down {
     width: 16px;
     height: 16px;
     cursor: pointer;
     position: absolute;
 }
 
-#icIBahyI-main_cont .icIBahyI-handwrite {
+#GoCheer-main_cont .GoCheer-handwrite {
     background-position: 0 -70px;
     top: 14px;
     right: 130px;
 }
 
-#icIBahyI-main_cont .icIBahyI-handwrite_over {
+#GoCheer-main_cont .GoCheer-handwrite_over {
     background-position: -18px -70px;
     top: 14px;
     right: 130px;
 }
 
-#icIBahyI-main_cont #icIBahyI-dict_main {
+#GoCheer-main_cont #GoCheer-dict_main {
     padding-bottom: 10px;
 }
 
-#icIBahyI-main_cont .icIBahyI-dictbar {
+#GoCheer-main_cont .GoCheer-dictbar {
     display: inline-block;
     padding: 0 0 18px 8px;
     position: relative;
 }
 
-#icIBahyI-main_cont .icIBahyI-title {
+#GoCheer-main_cont .GoCheer-title {
     line-height: 32px;
     position: relative;
     font-size: 24px;
@@ -281,19 +281,19 @@
     word-break: break-all;
 }
 
-#icIBahyI-main_cont .icIBahyI-prons {
+#GoCheer-main_cont .GoCheer-prons {
     white-space: nowrap;
     word-break: break-all;
     font-weight: 700;
 }
 
-#icIBahyI-main_cont .icIBahyI-dict_title {
+#GoCheer-main_cont .GoCheer-dict_title {
     color: #9fa6ad;
     font-family: "microsoft yahei", arial, sans-serif;
     margin-bottom: 6px;
 }
 
-#icIBahyI-main_cont .icIBahyI-ico_sound {
+#GoCheer-main_cont .GoCheer-ico_sound {
     background: url(http://cdn.iciba.com/web/img/HYI_bg.png) no-repeat 0 -80px;
     display: block;
     float: left;
@@ -303,25 +303,25 @@
     overflow: hidden;
 }
 
-#icIBahyI-main_cont .icIBahyI-ico_sound:hover {
+#GoCheer-main_cont .GoCheer-ico_sound:hover {
     background-position: -40px -80px;
 }
 
-#icIBahyI-main_cont .icIBahyI-eg, #icIBahyI-main_cont .icIBahyI-us, #icIBahyI-main_cont .icIBahyI-group_pos strong, #icIBahyI-main_cont .icIBahyI-group_inf li {
+#GoCheer-main_cont .GoCheer-eg, #GoCheer-main_cont .GoCheer-us, #GoCheer-main_cont .GoCheer-group_pos strong, #GoCheer-main_cont .GoCheer-group_inf li {
     padding-right: 10px;
 }
 
-#icIBahyI-main_cont .icIBahyI-eg, #icIBahyI-main_cont .icIBahyI-us {
+#GoCheer-main_cont .GoCheer-eg, #GoCheer-main_cont .GoCheer-us {
     font-family: "microsoft yahei", "lucida sans unicode", arial;
     padding-top: 2px;
 }
 
-#icIBahyI-main_cont .icIBahyI-new_word {
+#GoCheer-main_cont .GoCheer-new_word {
     padding-top: 2px;
     float: left;
 }
 
-#icIBahyI-main_cont .icIBahyI-new_word a {
+#GoCheer-main_cont .GoCheer-new_word a {
     padding: 3px 10px 0 20px;
     height: 17px;
     font-weight: 100;
@@ -332,147 +332,147 @@
     font-family: "宋体"
 }
 
-#icIBahyI-main_cont .icIBahyI-new_word a.icIBahyI-new_word2 {
+#GoCheer-main_cont .GoCheer-new_word a.GoCheer-new_word2 {
     background-position: -274px -19px
 }
 
-#icIBahyI-main_cont .icIBahyI-usually, #icIBahyI-main_cont .icIBahyI-prons {
+#GoCheer-main_cont .GoCheer-usually, #GoCheer-main_cont .GoCheer-prons {
     color: #999;
 }
 
-#icIBahyI-main_cont .icIBahyI-group_prons .icIBahyI-second {
+#GoCheer-main_cont .GoCheer-group_prons .GoCheer-second {
     float: none;
     padding-top: 0;
 }
 
-#icIBahyI-main_cont .icIBahyI-group_prons .icIBahyI-second .icIBahyI-eg {
+#GoCheer-main_cont .GoCheer-group_prons .GoCheer-second .GoCheer-eg {
     height: 24px;
 }
 
-#icIBahyI-main_cont .icIBahyI-mb9 p {
+#GoCheer-main_cont .GoCheer-mb9 p {
     margin-bottom: 9px;
 }
 
-#icIBahyI-main_cont .icIBahyI-group_pos {
+#GoCheer-main_cont .GoCheer-group_pos {
     color: #232323;
     line-height: 20px;
     clear: both;
     overflow: hidden;
 }
 
-#icIBahyI-main_cont .icIBahyI-group_pos p {
+#GoCheer-main_cont .GoCheer-group_pos p {
     clear: both;
 }
 
-#icIBahyI-main_cont .icIBahyI-cn .icIBahyI-group_pos {
+#GoCheer-main_cont .GoCheer-cn .GoCheer-group_pos {
     color: #333;
 }
 
-#icIBahyI-main_cont .icIBahyI-group_pos strong {
+#GoCheer-main_cont .GoCheer-group_pos strong {
     color: #8d8d8d;
 }
 
-#icIBahyI-main_cont .icIBahyI-group_prons {
+#GoCheer-main_cont .GoCheer-group_prons {
     clear: both;
 }
 
-#icIBahyI-main_cont .icIBahyI-margin_top {
+#GoCheer-main_cont .GoCheer-margin_top {
     padding-top: 6px;
 }
 
-#icIBahyI-main_cont .icIBahyI-part_list a, #icIBahyI-main_cont .icIBahyI-tab_list li a, #icIBahyI-main_cont .icIBahyI-new_word a, #icIBahyI-main_cont .icIBahyI-part_main h3 a {
+#GoCheer-main_cont .GoCheer-part_list a, #GoCheer-main_cont .GoCheer-tab_list li a, #GoCheer-main_cont .GoCheer-new_word a, #GoCheer-main_cont .GoCheer-part_main h3 a {
     text-decoration: none;
 }
 
-#icIBahyI-main_cont .icIBahyI-tab_list {
+#GoCheer-main_cont .GoCheer-tab_list {
     overflow: hidden;
     padding: 0 0 0 8px;
     background: #c8c8c8;
 }
 
-#icIBahyI-main_cont .icIBahyI-title {
+#GoCheer-main_cont .GoCheer-title {
     font-size: 14px;
     padding: 13px 10px 1px;
     line-height: 18px
 }
 
-#icIBahyI-main_cont .icIBahyI-dictbar {
+#GoCheer-main_cont .GoCheer-dictbar {
     padding-left: 0;
     padding-bottom: 6px
 }
 
-#icIBahyI-main_cont .icIBahyI-prons {
+#GoCheer-main_cont .GoCheer-prons {
     font-weight: 100;
     overflow: hidden;
 }
 
-#icIBahyI-main_cont .icIBahyI-group_pos {
+#GoCheer-main_cont .GoCheer-group_pos {
     line-height: 20px;
     font-size: 14px;
 }
 
-#icIBahyI-main_cont .icIBahyI-group_pos p {
+#GoCheer-main_cont .GoCheer-group_pos p {
     padding-bottom: 9px;
 }
 
-#icIBahyI-main_cont .icIBahyI-label_list {
+#GoCheer-main_cont .GoCheer-label_list {
     display: table-cell;
     padding-left: 5px;
     *padding-top: 2px;
 }
 
-#icIBahyI-main_cont .icIBahyI-group_pos .icIBahyI-fl {
+#GoCheer-main_cont .GoCheer-group_pos .GoCheer-fl {
     color: #666 !important;
     font-family: "microsoft yahei";
     display: inline-block;
     vertical-align: top;
 }
 
-#icIBahyI-main_cont .icIBahyI-synon {
+#GoCheer-main_cont .GoCheer-synon {
     color: #333;
     line-height: 28px;
 }
 
-#icIBahyI-main_cont .icIBahyI-suggest, #icIBahyI-main_cont .icIBahyI-suggest2 {
+#GoCheer-main_cont .GoCheer-suggest, #GoCheer-main_cont .GoCheer-suggest2 {
     color: #333;
     word-wrap: break-word;
 }
 
-#icIBahyI-main_cont .icIBahyI-suggest ul {
+#GoCheer-main_cont .GoCheer-suggest ul {
     line-height: 155%;
     padding: 7px 0 4px;
 }
 
-#icIBahyI-main_cont .icIBahyI-suggest li {
+#GoCheer-main_cont .GoCheer-suggest li {
     background-position: -134px -304px;
     padding-left: 14px;
 }
 
-#icIBahyI-main_cont .icIBahyI-suggest p {
+#GoCheer-main_cont .GoCheer-suggest p {
     line-height: 250%;
 }
 
-#icIBahyI-main_cont .icIBahyI-suggest .icIBahyI-pr a {
+#GoCheer-main_cont .GoCheer-suggest .GoCheer-pr a {
     padding-right: 3px;
 }
 
-#icIBahyI-main_cont .icIBahyI-suggest, #icIBahyI-main_cont .icIBahyI-suggest2 {
+#GoCheer-main_cont .GoCheer-suggest, #GoCheer-main_cont .GoCheer-suggest2 {
     padding-left: 0;
     font-size: 14px;
     line-height: 22px;
 }
 
-#icIBahyI-main_cont .icIBahyI-suggest p.icIBahyI-pr {
+#GoCheer-main_cont .GoCheer-suggest p.GoCheer-pr {
     line-height: 18px;
     margin-top: 3px;
 }
 
-#icIBahyI-main_cont .icIBahyI-suggest .icIBahyI-pr a {
+#GoCheer-main_cont .GoCheer-suggest .GoCheer-pr a {
     padding-right: 10px;
     display: inline-block;
 }
 
-#icIBahyI-main_cont .icIBahyI-footer {
+#GoCheer-main_cont .GoCheer-footer {
     text-align: right;
     color: #999;
     _width: 260px;
@@ -480,18 +480,18 @@
     font-size: 12px;
 }
 
-#icIBahyI-main_cont .icIBahyI-footer a {
+#GoCheer-main_cont .GoCheer-footer a {
     color: #236fd4;
     text-decoration: none;
     padding-right: 10px;
 }
 
-#icIBahyI-main_cont .icIBahyI-footer a:hover {
+#GoCheer-main_cont .GoCheer-footer a:hover {
     color: #236fd4;
     text-decoration: underline;
 }
 
-#icIBahyI-main_cont a.icIBahyI-xx {
+#GoCheer-main_cont a.GoCheer-xx {
     font-size: 12px;
     line-height: 18px;
     font-weight: 100;
@@ -501,30 +501,30 @@
     padding-bottom: 0;
 }
 
-#icIBahyI-main_cont a.icIBahyI-xx:hover {
+#GoCheer-main_cont a.GoCheer-xx:hover {
     color: #236fd4;
     text-decoration: underline !important;
 }
 
-#icIBahyI-main_cont .icIBahyI-text_blue {
+#GoCheer-main_cont .GoCheer-text_blue {
     color: #236fd4;
 }
 
-#icIBahyI-main_cont .icIBahyI-list li {
+#GoCheer-main_cont .GoCheer-list li {
     padding: 0 15px;
 }
 
-#icIBahyI-main_cont .icIBahyI-li_dt, .icIBahyI-li_dd {
+#GoCheer-main_cont .GoCheer-li_dt, .GoCheer-li_dd {
     display: inline;
     line-height: 24px;
 }
 
-#icIBahyI-main_cont .icIBahyI-li_dt {
+#GoCheer-main_cont .GoCheer-li_dt {
     color: #232323;
     padding-right: 5px;
 }
 
-#icIBahyI-main_cont .icIBahyI-li_dd {
+#GoCheer-main_cont .GoCheer-li_dd {
     color: #777;
 }
 
@@ -534,7 +534,7 @@
     font-size: 12px;
 }
 
-.icIBahyI-options {
+.GoCheer-options {
     height: 40px;
     overflow: hidden;
     text-align: center;
@@ -543,7 +543,7 @@
     font-size: 12px;
 }
 
-.icIBahyI-options .icIBahyI-scbbtn {
+.GoCheer-options .GoCheer-scbbtn {
     float: left;
     height: 40px;
     line-height: 40px;
@@ -553,7 +553,7 @@
     background: #fff
 }
 
-.icIBahyI-options .icIBahyI-scbbtn i.scb-icon {
+.GoCheer-options .GoCheer-scbbtn i.scb-icon {
     display: inline-block;
     width: 20px;
     height: 22px;
@@ -563,37 +563,37 @@
     vertical-align: middle;
 }
 
-.icIBahyI-options .icIBahyI-scbbtn.active {
+.GoCheer-options .GoCheer-scbbtn.active {
     border-top: none;
     background: #f8f8f8;
 }
 
-.icIBahyI-options .icIBahyI-scbbtn.active i.scb-icon {
+.GoCheer-options .GoCheer-scbbtn.active i.scb-icon {
     background: url(http://cdn.iciba.com/web/img/HYI_bg.png) no-repeat -40px -24px;
 }
 
-.icIBahyI-options .icIBahyI-scbbtn.active span {
+.GoCheer-options .GoCheer-scbbtn.active span {
     color: #44a9f3;
 }
 
-.icIBahyI-options .icIBahyI-scbbtn:hover span {
+.GoCheer-options .GoCheer-scbbtn:hover span {
     color: #44a9f3;
     cursor: pointer;
 }
 
-.icIBahyI-options .icIBahyI-scbbtn:hover i.scb-icon {
+.GoCheer-options .GoCheer-scbbtn:hover i.scb-icon {
     background: url(http://cdn.iciba.com/web/img/HYI_bg.png) no-repeat -40px -24px;
 }
 
-.icIBahyI-options .icIBahyI-scbbtn.disable:hover i.scb-icon {
+.GoCheer-options .GoCheer-scbbtn.disable:hover i.scb-icon {
     background: url(http://cdn.iciba.com/web/img/HYI_bg.png) no-repeat 0 -24px;
 }
 
-.icIBahyI-options .icIBahyI-scbbtn.disable:hover span {
+.GoCheer-options .GoCheer-scbbtn.disable:hover span {
     color: #9fa6ad;
 }
 
-.icIBahyI-options .icIBahyI-morebtn {
+.GoCheer-options .GoCheer-morebtn {
     width: 175px;
     float: left;
     height: 40px;
@@ -602,15 +602,15 @@
     border-top: 1px solid #d9d9d9;
 }
 
-.icIBahyI-options .icIBahyI-morebtn a {
+.GoCheer-options .GoCheer-morebtn a {
     color: #9fa6ad;
 }
 
-.icIBahyI-options .icIBahyI-morebtn:hover a {
+.GoCheer-options .GoCheer-morebtn:hover a {
     color: #44a9f3;
 }
 
-.icIBahyI-options .icIBahyI-morebtn i.more-icon {
+.GoCheer-options .GoCheer-morebtn i.more-icon {
     display: inline-block;
     width: 18px;
     height: 3px;
@@ -619,7 +619,7 @@
     vertical-align: middle;
 }
 
-.icIBahyI-options .icIBahyI-morebtn:hover i.more-icon {
+.GoCheer-options .GoCheer-morebtn:hover i.more-icon {
     background: url(http://cdn.iciba.com/web/img/HYI_bg.png) no-repeat -40px -64px;
 }
 
@@ -687,8 +687,8 @@
     -webkit-user-select: none;
 }
 
-/*#icIBahyI-scbiframe{box-shadow:inset 0 20px 20px -20px #000000;}*/
-#icIBahyI-scbiframe h3.h-text {
+/*#GoCheer-scbiframe{box-shadow:inset 0 20px 20px -20px #000000;}*/
+#GoCheer-scbiframe h3.h-text {
     font-size: 12px;
     color: #a7b1ba;
     font-family: "microsoft yahei";

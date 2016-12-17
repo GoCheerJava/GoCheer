@@ -35,6 +35,13 @@
       "run_at": "document_end"
     }
   ],
+  "web_accessible_resources": [
+    "images/*.png"
+//    "style/double-rainbow.css",
+//    "script/double-rainbow.js",
+//    "script/main.js",
+//    "templates/*"
+  ],
   "description": "目前只是测试在任一网页上划词出有道",
   "icons": {
     "128": "images/logo.png",
