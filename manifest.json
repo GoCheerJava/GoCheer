@@ -4,7 +4,7 @@
       "jquery.min.js",
       "jquery-3.1.0.js",
       "background.js",
-      "yanue.pop.js"
+      "PopAch.js"
     ]
   },
   //   browser_action是浏览器标题栏右测的那个图标的行为
@@ -21,7 +21,7 @@
         "jquery.min.js",
         "jquery-3.1.0.js",
         "select.js",
-        "yanue.pop.js"
+        "PopAch.js"
       ],
       "css": [
         "style.css",

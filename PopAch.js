@@ -1,4 +1,7 @@
-﻿//pop右下角弹窗函数
+/**
+ * Created by ZHY on 2016/12/18.
+ */
+//pop右下角弹窗函数
 
 function Pop(name, url, intro, state, no,num) {
     this.name = name;
