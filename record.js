@@ -32,6 +32,8 @@ $(function () {
             data: {extension: "true"},
             success: function () {
                 console.log("logout success.");
+                $("#not_logged_in").css("display", "block");
+                $("#login_success").css("display","none");
             }
         })
     })

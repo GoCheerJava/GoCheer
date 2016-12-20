@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 #GoCheer-main_box {
-    width: 350px;
+    width: 300px;
     background: #fff;
     z-index: 99998;
     position: absolute;
@@ -58,7 +58,7 @@
 #GoCheer-main_box .GoCheer-search {
     height: 30px;
     line-height: 30px;
-    color: #44a8f3;
+    color: #FF8C00;
     font-size: 24px;
     padding: 0 20px;
     overflow: hidden;
@@ -158,7 +158,7 @@
     font-size: 14px;
     background: #fbfbfb;
     color: #666;
-    min-height: 150px;
+    /*min-height: 150px;*/
 }
 
 #GoCheer-main_cont div, #GoCheer-main_cont ul, #GoCheer-main_cont li, #GoCheer-main_cont p, #GoCheer-main_cont form, #GoCheer-main_cont input, #GoCheer-main_cont label {

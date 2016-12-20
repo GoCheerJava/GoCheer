@@ -12,7 +12,7 @@ var text_result_box =
         '<div id="GoCheer-main_box" style="display: none;">' +
         '    <div class="GoCheer-main_title" id="GoCheer-main_title" style="cursor: default;">' +
         '        <a href="javascript:;" id="GoCheer-gb" class="GoCheer-gb" title="关闭"></a>' +
-        // '        <i class="GoCheer-logo"></i>' +
+        '        <i class="GoCheer-logo"></i>' +
         '    </div>' +
         '    <div class="GoCheer-search" id="ICIBA_HUAYI_input"></div>' +
         '    <div class="GoCheer-loading" id="loading" style="display: none;"></div>' +
@@ -52,6 +52,19 @@ var text_achivement_box =
         '    </div>'
     ;
 
+// $(function () {
+//     var has_result_box_or_not = document.getElementById("GoCheer-main_box");
+//     if (!has_result_box_or_not) {
+//         $("body").append(text_result_box);
+//     }
+//
+//     var b = document.getElementById("GoCheer_PopWrap");
+//     if (!b) {
+//         var p2 = document.createElement("div");
+//         p2.setAttribute("id", "GoCheer_PopWrap");
+//         document.body.appendChild(p2);
+//     }
+// })
 
 function ask_for_loginstate(data) {
     log_state = data;
