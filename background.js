@@ -14,11 +14,9 @@ function onRequest(request, sender, callback) {
             success: function (item) {
                 obj = eval(item);
                 if (obj.user == null) {
-                    // $("#not_logged_in").css("display", "block");
                     login_state1 = false;
                 }
                 else {
-                    // $("#login_success").css("display", "block");
                     login_state1 = true;
                 }
                 callback(login_state1);//将登录状态状态发给select.js

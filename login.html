@@ -5,26 +5,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <script src="jquery-3.1.0.js" type="text/javascript"></script>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <!--<link type="text/css" rel="stylesheet" href="css">-->
+
+    <link type="text/css" rel="stylesheet" href="css/login.css">
+    <link type="text/css" rel="stylesheet" href="css/login-state.css">
+    <link type="text/css" rel="stylesheet" href="css/input.css">
+
+    <script src="js/jquery-3.1.0.js" type="text/javascript"></script>
     <script src="record.js" type="text/javascript"></script>
+
     <title>枸杞-用户登录页</title>
 
 </head>
 <body>
-
-<form id="not_logged_in" name="loginForm" method="post" action="http://gocheer.donggu.me/Login" style="display: none;">
-    <input name="username"/>
-    <input type="hidden" name="extension" value="true">
-    <br><br><br>
-    <input type="password" name="password"/>
-    <button type="submit">login</button>
+<form id="not_logged_in" name="loginForm" method="post" style="display: none;height: 200px;width: 200px;">
+    <div class="container col-md-4 container1">
+        <div class="input-container">
+            <span class="input input--hoshi">
+                <input class="input__field input__field--hoshi" type="text" id="input-1" name="username"/>
+                <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-1">
+                    <span class="input__label-content input__label-content--hoshi">Username</span>
+                </label>
+            </span>
+            <input type="hidden" name="extension" value="true">
+            <span class="input input--hoshi">
+                <input class="input__field input__field--hoshi" type="password" name="password" id="input-2"/>
+                <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-2">
+                    <span class="input__label-content input__label-content--hoshi">Password</span>
+                </label>
+            </span>
+            <button id="subbutton" type="submit" class="btn">Login</button>
+        </div>
+    </div>
 </form>
-
-<div id="login_success" style="display: none;">
-    <p>hi!</p>
-    <button id="logout">注销</button>
+<div class="container" id="login_success" style="display: none;height: 200px;width: 300px;">
+    <div class="fl-left">
+        <h3>Hello name!</h3>
+    </div>
+    <div class="y-right fl-left">
+        <button type="button" class="btn-logout" id="logout">Log Out</button>
+    </div>
+    <table class="table table-condensed table-score">
+        <thead>
+        <tr>
+            <th>2000</th>
+            <th>300</th>
+            <th>2500</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Words</td>
+            <td>Achievement</td>
+            <td>Scores</td>
+        </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn-view btn-sm btn-block">My Profile</button>
+    <button type="button" class="btn-view btn-sm btn-block">View Leaderboard</button>
 </div>
 
+
+<!--<form id="not_logged_in" name="loginForm" method="post" style="display: none;">-->
+<!--<input name="username"/>-->
+<!--<input type="hidden" name="extension" value="true">-->
+<!--<br><br><br>-->
+<!--<input type="password" name="password"/>-->
+<!--<button id="subbutton" type="submit">login</button>-->
+<!--</form>-->
+
+
+<!--<div id="login_success" style="display: none;">-->
+<!--<p>hi!</p>-->
+<!--<button id="logout">注销</button>-->
+<!--</div>-->
+
+<script src="js/classie.js" type="text/javascript"></script>
 
 </body>
 </html>

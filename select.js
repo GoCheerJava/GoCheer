@@ -52,20 +52,6 @@ var text_achivement_box =
         '    </div>'
     ;
 
-// $(function () {
-//     var has_result_box_or_not = document.getElementById("GoCheer-main_box");
-//     if (!has_result_box_or_not) {
-//         $("body").append(text_result_box);
-//     }
-//
-//     var b = document.getElementById("GoCheer_PopWrap");
-//     if (!b) {
-//         var p2 = document.createElement("div");
-//         p2.setAttribute("id", "GoCheer_PopWrap");
-//         document.body.appendChild(p2);
-//     }
-// })
-
 function ask_for_loginstate(data) {
     log_state = data;
 }
@@ -96,8 +82,8 @@ $(function () {
 
     $("body").not("#GoCheer-main_box").unbind("click").bind("click", function getword(a) {
         //清除上次的划词结果
-        word=null;
-        obj=null;
+        word = null;
+        obj = null;
         $("#ICIBA_HUAYI_input").text("");
         $(".GoCheer-group_pos").empty();
 
@@ -105,8 +91,8 @@ $(function () {
         chrome.extension.sendRequest({"funct": "ask_for_loginstate"}, ask_for_loginstate);
 
         if (has_result == false) {
-            word=null;
-            obj=null;
+            word = null;
+            obj = null;
             console.log("1");
 
             var has_result_box_or_not = document.getElementById("GoCheer-main_box");
@@ -121,21 +107,53 @@ $(function () {
                 document.body.appendChild(p2);
             }
 
-            $("#GoCheer-main_box").unbind("click").bind("click",function (e) {
+            $("#GoCheer-main_box").unbind("click").bind("click", function (e) {
                 e.stopPropagation();
             })
-            $("#GoCheer-gb").unbind("click").bind("click",function (e) {
-                $("#GoCheer-main_box").css("display","none");
+            $("#GoCheer-gb").unbind("click").bind("click", function (e) {
+                $("#GoCheer-main_box").css("display", "none");
                 e.stopPropagation();
             })
             if (log_state == true) {
                 if (word = window.getSelection ? window.getSelection() : document.selection.createRange().text) {
                     has_word = true;
-                    console.log("word="+word);
+                    var mx = getMousePos(a).x;
+                    var my = getMousePos(a).y;
+                    var mx1=getMousePos1(a).x;
+                    var my1 = getMousePos1(a).y;
 
-                    if (word!="" && word!=null){
+                    console.log("x="+mx+" y="+my);
+                    console.log("document.body.clientHeight="+document.body.clientHeight);
+                    var qwe=document.body.clientHeight - my;
+                    console.log("document.body.clientHeight - my="+qwe);
+                    console.log("word=" + word);
+                    if (word != "" && word != null) {
                         $("#GoCheer-main_box").css("display", "block");
-                        $("#GoCheer-main_box").css("position", "absolute").css("left", (getMousePos(a).x + 10) + "px").css("top", (getMousePos(a).y + 10) + "px").css("z-index", "999");
+                        $("#GoCheer-main_box").css("position", "absolute");
+                        if (document.body.clientWidth - mx < 310) {
+                            $("#GoCheer-main_box").css("left", (document.body.clientWidth - 310) + "px");
+                        }
+                        else {
+                            $("#GoCheer-main_box").css("left", (mx + 10) + "px");
+                        }
+                        console.log("document.body.clientHeight="+document.body.clientHeight);
+                        if (document.body.clientHeight - my < 200) {
+                            var t=$("#GoCheer-main_box").offset().top;
+                            $("#GoCheer-main_box").css("bottom", (document.body.clientHeight-my-window.scrollY) + "px");
+                            $("#GoCheer-main_box").css("top","auto");
+                            console.log("top="+$("#GoCheer-main_box").offset().top);
+                        }
+                        else {
+                            var t=$("#GoCheer-main_box").offset().top;
+                            $("#GoCheer-main_box").css("top", (my1) + "px");
+                            $("#GoCheer-main_box").css("bottom","auto");
+                            // $("#GoCheer-main_box").css("bottom", 10 + "px");
+                            console.log("top="+$("#GoCheer-main_box").offset().top);
+                        }
+                        $("#GoCheer-main_box").css("z-index", "9999");
+                        // $("#GoCheer-main_box").css("z-index", "9999");
+
+                        // $("#GoCheer-main_box").css("position", "absolute").css("left", (getMousePos(a).x + 10) + "px").css("top", (getMousePos(a).y + 10) + "px").css("z-index", "999");
                         has_result = true;
                         $.ajax({
                             type: "get",
@@ -145,7 +163,7 @@ $(function () {
                                 obj = eval(item);
                                 var result = new Array();
                                 $("#ICIBA_HUAYI_input").text(obj.query);
-                                console.log("query="+obj.query);
+                                console.log("query=" + obj.query);
 //                         errorCode：
 // 　                       0 - 正常
 //                         20 - 要翻译的文本过长
@@ -187,11 +205,12 @@ $(function () {
 
                             }
                         });
+
+                        // $("#GoCheer-main_box").css("position","fixed");
+
                     }
                 }
             }
-
-            // a.stopPropagation();
         }
         else if (has_word == true && has_result == true) {
             console.log("2");
@@ -214,15 +233,20 @@ $(function () {
 
 })
 
-
 //获得划词时鼠标的位置
-function getMousePos(event) {
+function getMousePos1(event) {
+
     var e = event || window.event;
     var scrollX = document.documentElement.scrollLeft || document.body.scrollLeft;
     var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
     var x = e.pageX || e.clientX + scrollX;
     var y = e.pageY || e.clientY + scrollY;
     return {'x': x, 'y': y};
+}
+
+function getMousePos(event) {
+    var e = event || window.event;
+    return {'x':e.clientX,'y':e.clientY}
 }
 
 // document.body.addEventListener("click", getWord, false);

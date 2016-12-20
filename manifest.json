@@ -1,10 +1,10 @@
 {
   "background": {
     "scripts": [
-      "jquery.min.js",
-      "jquery-3.1.0.js",
+      "js/jquery.min.js",
+      "js/jquery-3.1.0.js",
       "background.js",
-      "PopAch.js"
+      "js/PopAch.js"
     ]
   },
   //   browser_action是浏览器标题栏右测的那个图标的行为
@@ -18,20 +18,19 @@
     {
       "all_frames": true,
       "js": [
-        "jquery.min.js",
-        "jquery-3.1.0.js",
+        "js/jquery.min.js",
+        "js/jquery-3.1.0.js",
         "select.js",
-        "PopAch.js"
+        "js/PopAch.js"
       ],
       "css": [
-        "style.css",
-        "popstyle.css"
+        "css/style.css",
+        "css/popstyle.css"
       ],
       "match_about_blank": true,
       "matches": [
         "<all_urls>"
       ],
-      //      "matches":[ "tabs","http://*/*", "https://*/*" ],
       "run_at": "document_end"
     }
   ],
@@ -57,9 +56,6 @@
     "notifications",
     "tabs"
   ],
-  //   "permissions": [
-  //      "tabs", "http://*/*", "https://*/*"
-  //   ],
   "version": "1.00"
   //   "web_accessible_resources": [ "ab20.png", "ydd-sprite.png", "speech.png" ]
 }

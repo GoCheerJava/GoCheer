@@ -1,16 +1,62 @@
-.jumbotron {
-    background-image: url("../images/login_bg.png");
-    background-size: cover;
-    height: 400px;
+.input-container{
+    background:none;
+    width: 100%;
+    margin:auto;
+    text-align:center;
+}
+.container1{
     padding: 0;
 }
-.jumbotron .container{
-    height: 400px;
-    background-color: rgba(243, 243, 243, 0.6);
-    padding:0;
-    width: 850px;
+
+.fl-left{
+    float: left;
 }
 
-.form-group{
-    margin-top: 20px;
+.btn{
+    background-color: #ff8c00;
+    color:#fff;
+    border:0;
+    margin:10px auto;
+    width:50%;
+    height: 40px;
+}
+.btn-view{
+    background-color: #ff8c00;
+    color:#fff;
+    border:0;
+    margin:10px auto;
+    width:50%;
+}
+
+.btn-logout{
+    background-color: #fff;
+    color:#ff8c00;
+    border:1px solid darkorange;
+    border-radius: 5px;
+    margin:24px auto;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.table-score > thead > tr > th {
+    border-bottom: 0.1px solid #ffffff;
+    text-align: center;
+    font-size: 20px;
+    vertical-align: bottom;
+}
+.table-score> tbody > tr > td{
+    text-align: center;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.container h3{
+    color: darkorange;
+    text-align: center;
+}
+
+
+
+.y-right{
+    float: right!important;
 }

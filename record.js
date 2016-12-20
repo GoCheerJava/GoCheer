@@ -33,9 +33,39 @@ $(function () {
             success: function () {
                 console.log("logout success.");
                 $("#not_logged_in").css("display", "block");
-                $("#login_success").css("display","none");
+                $("#login_success").css("display", "none");
             }
         })
     })
 
 })
+
+$(function () {
+    $("#not_logged_in").submit(function () {
+        return false;
+    }); // 禁用 form 提交，页面不会跳转
+    $("#subbutton").click(function () {
+        var param = {}; // 组装发送参数，下面只是举个例，请按需要修改
+        param['username'] = $('#not_logged_in input[name=username]').val();
+        param['extension'] = $('#not_logged_in input[name=extension]').val();
+        param['password'] = $('#not_logged_in input[name=password]').val();
+
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "http://gocheer.donggu.me/Login",
+            "method": "POST",
+            "headers": {
+                "content-type": "application/x-www-form-urlencoded",
+                "cache-control": "no-cache",
+            },
+            "data": param
+        }
+
+        $.ajax(settings).done(function (response) {
+            $("#not_logged_in").css("display", "none");
+            $("#login_success").css("display", "block");
+        });
+
+    });
+});
