@@ -25,7 +25,8 @@
     color:#fff;
     border:0;
     margin:10px auto;
-    width:50%;
+    width:80%;
+    font-size: 14px;
 }
 
 .btn-logout{
@@ -46,7 +47,7 @@
 }
 .table-score> tbody > tr > td{
     text-align: center;
-    font-size: 12px;
+    font-size: 18px;
     line-height: 1;
 }
 
@@ -59,4 +60,16 @@
 
 .y-right{
     float: right!important;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+a:focus{
+    text-decoration: none;
 }

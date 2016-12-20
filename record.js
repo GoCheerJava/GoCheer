@@ -19,6 +19,12 @@ $(function () {
             else {
                 $("#login_success").css("display", "block");
                 login_state = true;
+                $("#wordsum").html(obj.user.wordsum);
+                $("#scoresum").html(obj.user.scoresum);
+                $("#score").html(obj.user.score);
+                $("#alias").html(obj.user.alias);
+                $("#href_My_Profile").attr("href","http://gocheer.donggu.me/home/"+obj.user.username);
+
             }
         }
     })
@@ -64,7 +70,26 @@ $(function () {
 
         $.ajax(settings).done(function (response) {
             $("#not_logged_in").css("display", "none");
-            $("#login_success").css("display", "block");
+            $.ajax({
+                type: "get",
+                url: "http://gocheer.donggu.me/userInfo",
+                success: function (item) {
+                    obj = eval(item);
+                    if (obj.user == null) {
+                        $("#not_logged_in").css("display", "block");
+                        login_state = false;
+                    }
+                    else {
+                        $("#login_success").css("display", "block");
+                        login_state = true;
+                        $("#wordsum").html(obj.user.wordsum);
+                        $("#scoresum").html(obj.user.scoresum);
+                        $("#score").html(obj.user.score);
+                        $("#alias").html(obj.user.alias);
+                        // $("#href_My_Profile").attr("href","http://gocheer.donggu.me/home/"+obj.user.username);
+                    }
+                }
+            })
         });
 
     });

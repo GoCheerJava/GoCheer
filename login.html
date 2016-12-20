@@ -41,17 +41,18 @@
 </form>
 <div class="container" id="login_success" style="display: none;height: 200px;width: 300px;">
     <div class="fl-left">
-        <h3>Hello name!</h3>
+        <h3>Hello, <span id="alias"></span></h3>
     </div>
+
     <div class="y-right fl-left">
         <button type="button" class="btn-logout" id="logout">Log Out</button>
     </div>
     <table class="table table-condensed table-score">
         <thead>
         <tr>
-            <th>2000</th>
-            <th>300</th>
-            <th>2500</th>
+            <th id="wordsum">2000</th>
+            <th id="scoresum">300</th>
+            <th id="score">2500</th>
         </tr>
         </thead>
         <tbody>
@@ -62,8 +63,13 @@
         </tr>
         </tbody>
     </table>
-    <button type="button" class="btn-view btn-sm btn-block">My Profile</button>
-    <button type="button" class="btn-view btn-sm btn-block">View Leaderboard</button>
+    <a target="_blank" id="href_My_Profile" href="http://gocheer.donggu.me/login">
+        <button type="button" class="btn-view btn-sm btn-block">My Profile</button>
+    </a>
+    <a target="_blank" id="href_View_Leaderboard" href="http://gocheer.donggu.me/leaderboard.jsp">
+        <button type="button" class="btn-view btn-sm btn-block">View Leaderboard</button>
+    </a>
+
 </div>
 
 
