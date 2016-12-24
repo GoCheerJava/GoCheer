@@ -5,47 +5,55 @@
     <title>Title</title>
     <!--<link type="text/css" rel="stylesheet" href="http://open.iciba.com/huaci_new/huaci.css">-->
     <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/achievement.css">
+    <!--<link type="text/css" rel="stylesheet" href="css/popstyle.css">-->
+
     <!--<link href="style.css">-->
     <script src="js/jquery-3.1.0.js" type="text/javascript"></script>
 </head>
 <body>
 <h1>test</h1>
 <h1>hello</h1>
-<div id="div1" style="height: 200px;width: 400px;background-color: #2aabd2;">
-    <h1>name</h1>
-    <h1>book</h1>
+<div style="padding: 50px">
+    <div class="achievement_main_box">
+
+    </div>
 </div>
-
-<h1>I love you.</h1>
-<h1>name</h1>
-<h1>book</h1>    <h1>name</h1>
-<h1>book</h1>    <h1>name</h1>
-<h1>book</h1>    <h1>name</h1>
-<h1>book</h1>    <h1>name</h1>
-<h1>book</h1>    <h1>name</h1>
-<h1>book</h1>    <h1>name</h1>
-<h1>book</h1>    <h1>name</h1>
-<h1>book</h1> <h1>I love you</h1>
-<!--<span><img src="images/logo.png"></span>-->
-<!--<div id="test1" style="background-color: red;height: 200px;width: 200px"></div>-->
+<div class="achievement_main_box">
+    <div id="popHead">
+        <a id="popClose" title="关闭"></a>
+    </div>
+    <div id="popContent">
+        <div id="img_wrap">
+            <img id="popimg" src="images/default.png">
+        </div>
+        <div id="info_wrap">
+            <dl>
+                <dd id="popTitle">New Achievement Established:</dd>
+                <dd id="popAchName">成就名称</dd>
+                <dd id="popIntro">成就描述成就描述成就描述成就描述成就描述成就描述成就描述成就描述成就描述</dd>
+                <dd id="popBonus">Bonus points:</dd>
+            </dl>
+        </div>
+        <p id="popMore"><a href="http://gocheer.donggu.me/login" target="_blank">view more</a></p>
+    </div>
+</div>
 <script>
-    function getWord() {
-        var word = window.getSelection ? window.getSelection() : document.selection.createRange().text;
-    }
-    document.body.addEventListener("click", getWord, false);
-
-//    $("body:not(#div1)").unbind("click").bind("click",function () {
-//        $("#test1").css("background-color","yellow");
-//    })
-//    $("#div1").click(function (e) {
-////        alert("hi");
-//        e.stopPropagation();
-//    })
+//    var url=chrome.runtime.getURL("images/icon_close.png");
+//    $("#popClose").css("background-image",url);
+    $("#popAchName").append("【Hidden】");
 </script>
-<div id="YOUDAO_SELECTOR_WRAPPER" style="display:none; margin:0; border:0; padding:0; width:320px; height:240px;"></div>
-<script type="text/javascript"
-        src="http://fanyi.youdao.com/openapi.do?keyfrom=GoCheer&key=1831162149&type=selector&version=1.2&translate=on"
-        charset="utf-8"></script>
+
+<!--<script>-->
+<!--function getWord() {-->
+<!--var word = window.getSelection ? window.getSelection() : document.selection.createRange().text;-->
+<!--}-->
+<!--document.body.addEventListener("click", getWord, false);-->
+<!--</script>-->
+<!--<div id="YOUDAO_SELECTOR_WRAPPER" style="display:none; margin:0; border:0; padding:0; width:320px; height:240px;"></div>-->
+<!--<script type="text/javascript"-->
+<!--src="http://fanyi.youdao.com/openapi.do?keyfrom=GoCheer&key=1831162149&type=selector&version=1.2&translate=on"-->
+<!--charset="utf-8"></script>-->
 
 </body>
 

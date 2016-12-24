@@ -29,10 +29,10 @@
 
 #GoCheer-main_box .GoCheer-logo {
     display: inline-block;
-    width: 33px;
-    height: 12px;
-    margin-top: 10px;
-    background: url(http://cdn.iciba.com/web/img/HYI_bg.png) no-repeat 0 0;
+    width: 30px;
+    height: 30px;
+    margin-top: 0px;
+    background: no-repeat 0 0;
     vertical-align: middle;
 }
 

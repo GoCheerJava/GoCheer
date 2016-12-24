@@ -1,40 +1,59 @@
-.input-container{
-    background:none;
-    width: 100%;
-    margin:auto;
-    text-align:center;
+* {
+    font-family: 微软雅黑;
 }
-.container1{
+
+.input-container {
+    background: none;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.container1 {
     padding: 0;
 }
 
-.fl-left{
+.fl-left {
     float: left;
 }
 
-.btn{
+.btn {
     background-color: #ff8c00;
-    color:#fff;
-    border:0;
-    margin:10px auto;
-    width:50%;
+    color: #fff;
+    border: 0;
+    margin: 10px auto;
+    width: 50%;
     height: 40px;
 }
-.btn-view{
+
+.btn-sighup {
+    background-color: white;
+    border: 1px solid darkorange;
+    color: darkorange;
+    padding: 5px 11px;
+    line-height: 28px;
+}
+
+.btn-view {
     background-color: #ff8c00;
-    color:#fff;
-    border:0;
-    margin:10px auto;
-    width:80%;
+    color: #fff;
+    border: 0;
+    margin: 10px auto;
+    width: 80%;
     font-size: 14px;
 }
 
-.btn-logout{
+.btn-grey {
+    background-color: #ccc;
+    color: #fff;
+}
+
+.btn-logout {
     background-color: #fff;
-    color:#ff8c00;
-    border:1px solid darkorange;
+    color: #ff8c00;
+    border: 1px solid darkorange;
     border-radius: 5px;
-    margin:24px auto;
+    margin: 24px auto;
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -45,31 +64,30 @@
     font-size: 20px;
     vertical-align: bottom;
 }
-.table-score> tbody > tr > td{
+
+.table-score > tbody > tr > td {
     text-align: center;
     font-size: 18px;
     line-height: 1;
 }
 
-.container h3{
+.container h3 {
     color: darkorange;
     text-align: center;
 }
 
-
-
-.y-right{
-    float: right!important;
+.y-right {
+    float: right !important;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     text-decoration: none;
 }
 
-a:focus{
+a:focus {
     text-decoration: none;
 }

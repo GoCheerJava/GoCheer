@@ -34,22 +34,25 @@ var text_result_box =
         '    </div>' +
         '</div>'
     ;
+
 var text_achivement_box =
-        '    <div id="popHead">' +
-        '        <a id="popClose" title="关闭">关闭</a>' +
-        '        <h2>枸杞提示</h2>' +
+        '<div id="popHead">' +
+        '    <a id="popClose" title="关闭"></a>' +
+        '</div>' +
+        '<div id="popContent">' +
+        '    <div id="img_wrap">' +
+        '        <img id="popimg">' +
         '    </div>' +
-        '    <div id="popContent">' +
-        '        <dl>' +
-// '            <dt id="popTitle"><a href="http://yanue.info/" target="_blank">这里是参数</a></dt>' +
-//                     '            <img src=" chrome-extension://abaimkcklagckaoeopbangiihoabpmjo/images/icon10.png">' +
-        '            <dt id="popTitle">恭喜获得新成就：</dt>' +
-        '            <dd id="popAchName" style="font-weight: bold">这里是成就名称</dd>' +
-        '            <dd id="popIntro">这里是成就描述</dd>' +
-        '            <dd id="popState">是否隐藏成就</dd>' +
+        '        <div id="info_wrap">' +
+        '        <dl id="ach_dl">' +
+        '            <dd id="popTitle">New Achievement Established:</dd>' +
+        '            <dd id="popAchName">成就名称</dd>' +
+        '            <dd id="popIntro">成就描述</dd>' +
+        '            <dd id="popBonus">Bonus points:</dd>' +
         '        </dl>' +
-        '        <p id="popMore"><a href="http://yanue.info/" target="_blank">查看详情 »</a></p>' +
-        '    </div>'
+        '    </div>' +
+        '    <p id="popMore"><a href="http://gocheer.donggu.me/login" target="_blank">view more</a></p>' +
+        '</div>'
     ;
 
 function ask_for_loginstate(data) {
@@ -58,27 +61,58 @@ function ask_for_loginstate(data) {
 
 function ask_for_achivement(data) {
     ach_obj = data;
-    console.log(ach_obj);
+    // console.log(ach_obj);
     if (ach_obj.achievement != null) {
         for (var i = 0; i < ach_obj.achievement.length; i++) {
+            var url_image1=chrome.runtime.getURL("images/default.png");
+            var url_image2=chrome.runtime.getURL("images/icon_close.png");
             var p1 = document.createElement("div");
             $("#GoCheer_PopWrap").append(p1);
             p1.setAttribute("id", "pop" + ach_no);
-            $("#pop" + ach_no).addClass("asd");
+            $("#pop" + ach_no).addClass("achievement_main_box");
             p1.style.display = "none";
             $("#pop" + ach_no).append(text_achivement_box);
-            console.log(ach_obj.achievement[i].name);
-            new Pop(ach_obj.achievement[i].name, "http://www.baidu.com", ach_obj.achievement[i].description, ach_obj.achievement[i].hidden, ach_no);
+            // console.log(ach_obj.achievement[i].name);
+            $("#pop" + ach_no).find("#popimg").attr("src",url_image1);
+            $("#pop" + ach_no).find("#popClose").css("background-image","url("+url_image2+")");
+            // if (ach_no!=0){
+            //     var v=ach_no-1;
+            //     console.log("popv.height="+$("#pop" + v).height());
+            //     var bo = 10 +i*($("#pop" + v).height());
+            //     $("#pop" + ach_no).css("bottom",bo+"px");
+            // }
+            new Pop(ach_obj.achievement[i].name, ach_obj.achievement[i].description, ach_obj.achievement[i].hidden, ach_no, ach_obj.achievement[i].bonus);
+            var bo=10+i*165;
+            $("#pop" + ach_no).css("bottom",bo+"px");
             ach_no++;
         }
     }
 }
+
 
 $(function () {
     var word;
     var obj;
     var has_result = false;
     var has_word = false;
+
+    var has_result_box_or_not = document.getElementById("GoCheer-main_box");
+    if (!has_result_box_or_not) {
+        $("body").append(text_result_box);
+        var url_image3=chrome.runtime.getURL("images/枸杞水印.png");
+        $(".GoCheer-logo").css("background-image","url("+url_image3+")");
+    }
+
+    var b = document.getElementById("GoCheer_PopWrap");
+    if (!b) {
+        var p2 = document.createElement("div");
+        p2.setAttribute("id", "GoCheer_PopWrap");
+        document.body.appendChild(p2);
+    }
+
+    //给后台发请求问登录状态
+    chrome.extension.sendRequest({"funct": "ask_for_loginstate"}, ask_for_loginstate);
+
 
     $("body").not("#GoCheer-main_box").unbind("click").bind("click", function getword(a) {
         //清除上次的划词结果
@@ -87,6 +121,21 @@ $(function () {
         $("#ICIBA_HUAYI_input").text("");
         $(".GoCheer-group_pos").empty();
 
+
+        var has_result_box_or_not = document.getElementById("GoCheer-main_box");
+        if (!has_result_box_or_not) {
+            $("body").append(text_result_box);
+            var url_image3=chrome.runtime.getURL("images/枸杞水印.png");
+            $(".GoCheer-logo").css("background-image","url("+url_image3+")");
+        }
+
+        var b = document.getElementById("GoCheer_PopWrap");
+        if (!b) {
+            var p2 = document.createElement("div");
+            p2.setAttribute("id", "GoCheer_PopWrap");
+            document.body.appendChild(p2);
+        }
+
         //给后台发请求问登录状态
         chrome.extension.sendRequest({"funct": "ask_for_loginstate"}, ask_for_loginstate);
 
@@ -94,18 +143,6 @@ $(function () {
             word = null;
             obj = null;
             console.log("1");
-
-            var has_result_box_or_not = document.getElementById("GoCheer-main_box");
-            if (!has_result_box_or_not) {
-                $("body").append(text_result_box);
-            }
-
-            var b = document.getElementById("GoCheer_PopWrap");
-            if (!b) {
-                var p2 = document.createElement("div");
-                p2.setAttribute("id", "GoCheer_PopWrap");
-                document.body.appendChild(p2);
-            }
 
             $("#GoCheer-main_box").unbind("click").bind("click", function (e) {
                 e.stopPropagation();
@@ -122,11 +159,11 @@ $(function () {
                     var mx1=getMousePos1(a).x;
                     var my1 = getMousePos1(a).y;
 
-                    console.log("x="+mx+" y="+my);
-                    console.log("document.body.clientHeight="+document.body.clientHeight);
-                    var qwe=document.body.clientHeight - my;
-                    console.log("document.body.clientHeight - my="+qwe);
-                    console.log("word=" + word);
+                    // console.log("x="+mx+" y="+my);
+                    // console.log("document.body.clientHeight="+document.body.clientHeight);
+                    // var qwe=document.body.clientHeight - my;
+                    // console.log("document.body.clientHeight - my="+qwe);
+                    // console.log("word=" + word);
                     if (word != "" && word != null) {
                         $("#GoCheer-main_box").css("display", "block");
                         $("#GoCheer-main_box").css("position", "absolute");
@@ -136,24 +173,23 @@ $(function () {
                         else {
                             $("#GoCheer-main_box").css("left", (mx + 10) + "px");
                         }
-                        console.log("document.body.clientHeight="+document.body.clientHeight);
+                        // console.log("document.body.clientHeight="+document.body.clientHeight);
                         if (document.body.clientHeight - my < 200) {
                             var t=$("#GoCheer-main_box").offset().top;
                             $("#GoCheer-main_box").css("bottom", (document.body.clientHeight-my-window.scrollY) + "px");
                             $("#GoCheer-main_box").css("top","auto");
-                            console.log("top="+$("#GoCheer-main_box").offset().top);
+                            // console.log("top="+$("#GoCheer-main_box").offset().top);
                         }
                         else {
                             var t=$("#GoCheer-main_box").offset().top;
                             $("#GoCheer-main_box").css("top", (my1) + "px");
                             $("#GoCheer-main_box").css("bottom","auto");
                             // $("#GoCheer-main_box").css("bottom", 10 + "px");
-                            console.log("top="+$("#GoCheer-main_box").offset().top);
+                            // console.log("top="+$("#GoCheer-main_box").offset().top);
                         }
                         $("#GoCheer-main_box").css("z-index", "9999");
-                        // $("#GoCheer-main_box").css("z-index", "9999");
-
                         // $("#GoCheer-main_box").css("position", "absolute").css("left", (getMousePos(a).x + 10) + "px").css("top", (getMousePos(a).y + 10) + "px").css("z-index", "999");
+
                         has_result = true;
                         $.ajax({
                             type: "get",
@@ -205,9 +241,6 @@ $(function () {
 
                             }
                         });
-
-                        // $("#GoCheer-main_box").css("position","fixed");
-
                     }
                 }
             }
