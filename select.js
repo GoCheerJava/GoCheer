@@ -15,7 +15,6 @@ var text_result_box =
         '        <i class="GoCheer-logo"></i>' +
         '    </div>' +
         '    <div class="GoCheer-search" id="ICIBA_HUAYI_input"></div>' +
-        '    <div class="GoCheer-loading" id="loading" style="display: none;"></div>' +
         '    <div class="GoCheer-main_cont" id="GoCheer-main_cont" style="display: block;">' +
         '        <div id="GoCheer-title" class="GoCheer-title" style="display:none">hold</div>' +
         '        <div id="GoCheer-dict_main">' +
@@ -61,7 +60,6 @@ function ask_for_loginstate(data) {
 
 function ask_for_achivement(data) {
     ach_obj = data;
-    // console.log(ach_obj);
     if (ach_obj.achievement != null) {
         for (var i = 0; i < ach_obj.achievement.length; i++) {
             var url_image1=chrome.runtime.getURL("images/default.png");
@@ -72,15 +70,8 @@ function ask_for_achivement(data) {
             $("#pop" + ach_no).addClass("achievement_main_box");
             p1.style.display = "none";
             $("#pop" + ach_no).append(text_achivement_box);
-            // console.log(ach_obj.achievement[i].name);
             $("#pop" + ach_no).find("#popimg").attr("src",url_image1);
             $("#pop" + ach_no).find("#popClose").css("background-image","url("+url_image2+")");
-            // if (ach_no!=0){
-            //     var v=ach_no-1;
-            //     console.log("popv.height="+$("#pop" + v).height());
-            //     var bo = 10 +i*($("#pop" + v).height());
-            //     $("#pop" + ach_no).css("bottom",bo+"px");
-            // }
             new Pop(ach_obj.achievement[i].name, ach_obj.achievement[i].description, ach_obj.achievement[i].hidden, ach_no, ach_obj.achievement[i].bonus);
             var bo=10+i*165;
             $("#pop" + ach_no).css("bottom",bo+"px");
@@ -101,6 +92,8 @@ $(function () {
         $("body").append(text_result_box);
         var url_image3=chrome.runtime.getURL("images/枸杞水印.png");
         $(".GoCheer-logo").css("background-image","url("+url_image3+")");
+        var url_image4=chrome.runtime.getURL("images/icon_close.png");
+        $("#GoCheer-gb").css("background-image","url("+url_image4+")");
     }
 
     var b = document.getElementById("GoCheer_PopWrap");
@@ -142,7 +135,7 @@ $(function () {
         if (has_result == false) {
             word = null;
             obj = null;
-            console.log("1");
+            // console.log("1");
 
             $("#GoCheer-main_box").unbind("click").bind("click", function (e) {
                 e.stopPropagation();
@@ -158,12 +151,6 @@ $(function () {
                     var my = getMousePos(a).y;
                     var mx1=getMousePos1(a).x;
                     var my1 = getMousePos1(a).y;
-
-                    // console.log("x="+mx+" y="+my);
-                    // console.log("document.body.clientHeight="+document.body.clientHeight);
-                    // var qwe=document.body.clientHeight - my;
-                    // console.log("document.body.clientHeight - my="+qwe);
-                    // console.log("word=" + word);
                     if (word != "" && word != null) {
                         $("#GoCheer-main_box").css("display", "block");
                         $("#GoCheer-main_box").css("position", "absolute");
@@ -173,19 +160,15 @@ $(function () {
                         else {
                             $("#GoCheer-main_box").css("left", (mx + 10) + "px");
                         }
-                        // console.log("document.body.clientHeight="+document.body.clientHeight);
                         if (document.body.clientHeight - my < 200) {
                             var t=$("#GoCheer-main_box").offset().top;
                             $("#GoCheer-main_box").css("bottom", (document.body.clientHeight-my-window.scrollY) + "px");
                             $("#GoCheer-main_box").css("top","auto");
-                            // console.log("top="+$("#GoCheer-main_box").offset().top);
                         }
                         else {
                             var t=$("#GoCheer-main_box").offset().top;
                             $("#GoCheer-main_box").css("top", (my1) + "px");
                             $("#GoCheer-main_box").css("bottom","auto");
-                            // $("#GoCheer-main_box").css("bottom", 10 + "px");
-                            // console.log("top="+$("#GoCheer-main_box").offset().top);
                         }
                         $("#GoCheer-main_box").css("z-index", "9999");
                         // $("#GoCheer-main_box").css("position", "absolute").css("left", (getMousePos(a).x + 10) + "px").css("top", (getMousePos(a).y + 10) + "px").css("z-index", "999");
@@ -195,11 +178,10 @@ $(function () {
                             type: "get",
                             url: "//fanyi.youdao.com/openapi.do?keyfrom=GoCheer&key=1831162149&type=data&doctype=json&version=1.1&q=" + word,
                             success: function (item) {
-                                // console.log(item);
                                 obj = eval(item);
                                 var result = new Array();
                                 $("#ICIBA_HUAYI_input").text(obj.query);
-                                console.log("query=" + obj.query);
+                                // console.log("query=" + obj.query);
 //                         errorCode：
 // 　                       0 - 正常
 //                         20 - 要翻译的文本过长
@@ -246,7 +228,7 @@ $(function () {
             }
         }
         else if (has_word == true && has_result == true) {
-            console.log("2");
+            // console.log("2");
             $("#GoCheer-main_box").css("display", "none");
             $(".GoCheer-group_pos").empty();
             has_result = false;

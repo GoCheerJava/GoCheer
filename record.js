@@ -86,7 +86,6 @@ $(function () {
                         $("#scoresum").html(obj.user.scoresum);
                         $("#score").html(obj.user.score);
                         $("#alias").html(obj.user.alias);
-                        // $("#href_My_Profile").attr("href","http://gocheer.donggu.me/home/"+obj.user.username);
                     }
                 }
             })
