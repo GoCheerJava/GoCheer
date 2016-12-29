@@ -1,7 +1,6 @@
 # GoCheer插件开发
-A selected word extensiton with achievement system
 
-##### _update by 张鸿羽 12.28 21:56_
+##### _update by 张鸿羽  12.28 21:56_
 
 ### Chrome插件开发的文档
 
@@ -28,9 +27,6 @@ keyfrom：GoCheerJava
 ### 调试请求的工具
 
 postman（一个Chrome应用（不是扩展）），可以用来调试一些请求，在Chrome应用商店搜索安装即可。  
-使用方法大概可以参考一下冬菇的博客 
-http://donggu.me/2016/11/16/%E6%88%91%E5%8F%AA%E6%98%AF%E6%83%B3%E6%9F%A5%E4%B8%AA%E7%94%B5%E8%B4%B9/  
-
 
 -------------------------
 
